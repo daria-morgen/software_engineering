@@ -6,6 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/international-literacy-day.png" type="image/x-icon">
     <title>MathTeacher</title>
+
+    <script>
+        function checkValue1() {
+            var inputValue = document.getElementById("input_1");
+            if (inputValue.value == "225") {
+                inputValue.value = "Верно!";
+            } else inputValue.value = "Не верно!";
+        }
+        function checkValue2() {
+            var inputValue = document.getElementById("input_2");
+            if (inputValue.value == "240") {
+                inputValue.value = "Верно!";
+            } else inputValue.value = "Не верно!";
+        }
+
+        function checkValue3() {
+            var inputValue = document.getElementById("input_3");
+            if (inputValue.value == "165") {
+                inputValue.value = "Верно!";
+            } else inputValue.value = "Не верно!";
+        }
+
+    </script>
 </head>
 
 <body>
@@ -80,18 +103,18 @@
                 <h3>Проценты</h3>
                 <div class="taks_block">
                     <p>Найдите размер скачиваемого файла, если загруженные 12 % от него равны 27 мегабайтам.</p>
-                    <input>
-                    <button>Проверить(225)</button>
+                    <input type="text" id="input_1">
+                    <button onclick="checkValue1()">Проверить</button>
                 </div>
                 <div class="taks_block">
                     <p>В школе 500 учащихся, 52 % этого числа составляют девочки. Сколько мальчиков в школе?</p>
-                    <input>
-                    <button>Проверить(240)</button>
+                    <input type="text" id="input_2">
+                    <button onclick="checkValue2()">Проверить</button>
                 </div>
                 <div class="taks_block">
                     <p>Из 300 гостиничных номеров 45 % заняты постояльцами. Сколько номеров свободно?</p>
-                    <input>
-                    <button>Проверить(165)</button>
+                    <input type="text" id="input_3">
+                    <button onclick="checkValue3()">Проверить</button>
                 </div>
             </div>
         </section>
@@ -106,5 +129,6 @@
         <span>МИИТ 2023</span>
     </footer>
 </body>
+
 
 </html>
