@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/international-literacy-day.png" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/styles.css">
     <title>MathTeacher</title>
 
     <script>
@@ -27,38 +28,79 @@
                 inputValue.value = "Верно!";
             } else inputValue.value = "Не верно!";
         }
+        function deleteAndClose() {
 
+            hide_b_delete();
+            setTimeout(hide_footer, 500);
+            setTimeout(hide_tasks, 700);
+            setTimeout(hide_about_math, 900);
+            setTimeout(hide_head, 1100);
+            setTimeout(alert_message, 1300);
+            // alert("Страница будет закрыта")
+        }
+        function hide_b_delete() {
+            var b_deleteValue = document.getElementById("b_delete");
+            b_deleteValue.style.display = 'none';
+        }
+        function hide_footer() {
+            var footerValue = document.getElementById("contacts");
+            footerValue.style.display = 'none';
+        }
+        function hide_tasks() {
+            var taskValue = document.getElementById("tasks");
+            taskValue.style.display = 'none';
+        }
+        function hide_about_math() {
+            var mainValue = document.getElementById("about_math");
+            mainValue.style.display = 'none';
+        }
+        function hide_head() {
+            var headValue = document.getElementById("head_block");
+            headValue.style.display = 'none';
+        }
+
+        function alert_message() {
+            let isClosed = confirm("Закрыть страницу?")
+            if (!isClosed) {
+                window.location.replace("http://127.0.0.1:5500/index.html")
+            } else {
+                window.location.replace("http://ya.ru")
+            }
+
+        }
     </script>
 </head>
 
 <body>
 
-    <head id="home_p">
-        <h1>MathTeacher</h1>
-        <q>
-            Математику уже затем учить надо, что она ум в порядок приводит.
-        </q>
-        <address>Ломоносов Михаил Васильевич</address>
-        <br>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#home_p">Главная</a>
-                </li>
-                <li>
-                    <a href="#about_math">Математика</a>
-                </li>
-                <li>
-                    <a href="#tasks">Задачи</a>
-                </li>
-                <li>
-                    <a href="#contacts">Контакты</a>
-                </li>
-            </ul>
-        </nav>
+    <head>
+        <div id="head_block">
+            <h1>MathTeacher</h1>
+            <q>
+                Математику уже затем учить надо, что она ум в порядок приводит.
+            </q>
+            <address>Ломоносов Михаил Васильевич</address>
+            <br>
+            <nav class="head_nav">
+                <ul>
+                    <li>
+                        <a href="#home_p">Главная</a>
+                    </li>
+                    <li>
+                        <a href="#about_math">Математика</a>
+                    </li>
+                    <li>
+                        <a href="#tasks">Задачи</a>
+                    </li>
+                    <li>
+                        <a href="#contacts">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <hr>
+        </div>
     </head>
-    <main>
-        <hr>
+    <main id="main_block">
         <section>
             <div id="about_math">
                 <img src="images/math_pic.png" alt="just image">
@@ -94,9 +136,9 @@
                     <dd>Геометрическая теория, основанная на системе
                         аксиом, впервые изложенной в «Началах».</dd>
                 </dl>
+                <hr>
             </div>
         </section>
-        <hr>
         <section>
             <div id="tasks">
                 <h2>Задачи</h2>
@@ -118,6 +160,10 @@
                 </div>
             </div>
         </section>
+        <div id="b_delete">
+            <button id="delete_button" onclick="deleteAndClose()">
+                Up and close</button>
+        </div>
         <br>
     </main>
     <footer id="contacts">
@@ -129,6 +175,5 @@
         <span>МИИТ 2023</span>
     </footer>
 </body>
-
 
 </html>

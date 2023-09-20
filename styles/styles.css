@@ -1,0 +1,27 @@
+.head_nav li {
+    display: inline;
+    padding: 2px;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+body main {
+    padding: 10px;
+}
+
+#delete_button {
+    margin: 0px;
+    background-color: rgb(136, 215, 221);
+    z-index: 2;
+    position: fixed;
+    top: 80%;
+    right: 10%;
+    border-radius: 30px;
+    padding: 15px 32px;
+}
+
+#delete_button a{
+    text-decoration: none;
+}
